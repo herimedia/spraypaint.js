@@ -1,6 +1,6 @@
 {
   "name": "spraypaint",
-  "version": "0.8.0-thecoffeefactory.2",
+  "version": "0.8.0-thecoffeefactory.3",
   "description": "Graphiti Client / Javascript ORM",
   "main": "lib/index.js",
   "module": "lib-esm/index.js",
@@ -12,7 +12,7 @@
     "clean": "rimraf ./dist ./build ./coverage ./lib ./lib-esm",
     "prebuild": "yarn run clean && yarn test:ci && yarn lint:ci",
     "build": "npm-run-all build:node build:es6 build:copy_shims build:umd build:umd:min",
-    "prepare": "yarn run build",
+    "prepare": "yarn run clean && npm-run-all build:node build:es6 build:copy_shims build:umd build:umd:min",
     "build:node": "yarn run tsc -p ./tsconfig.node.json",
     "build:es6": "yarn run tsc -p ./tsconfig.lib.json",
     "build:umd": "yarn run rollup -c",
